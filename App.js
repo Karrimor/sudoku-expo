@@ -18,10 +18,8 @@ export default class App extends React.Component {
       puzzle: sudoku.makepuzzle()
     };
   }
-  // state = {
-  //   puzzle: sudoku.makepuzzle()
-  // }
-  onInput() {
+
+  onInput(squareKey, input) {
     Keyboard.dismiss();
   }
 
@@ -29,8 +27,6 @@ export default class App extends React.Component {
     let board = _.chunk(this.state.puzzle, 9);
     let rows = [];
     let squares = [];
-    // let squareMarker = null;
-    // let squareKey = null;
 
     board.map(row => {
       let rowSeparator = rows.length == 2 || rows.length == 5 ? true : false;
